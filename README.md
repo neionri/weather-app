@@ -70,15 +70,17 @@ Before you begin, ensure you have the following installed:
 
 4. **Configure API Key**
    
-   Open `src/App.jsx` and replace the API key:
-   ```javascript
-   const API_KEY = 'YOUR_API_KEY_HERE';
+   Create a `.env` file in the root directory:
+   ```bash
+   cp .env.example .env
    ```
    
-   Also update in `src/components/ForecastCards.jsx`:
-   ```javascript
-   const API_KEY = 'YOUR_API_KEY_HERE';
+   Open `.env` and add your API key:
+   ```env
+   VITE_WEATHER_API_KEY=your_api_key_here
    ```
+   
+   > **Important**: The `.env` file is already in `.gitignore` and will NOT be committed to GitHub. Your API key stays private! 🔒
 
 5. **Start the development server**
    ```bash
