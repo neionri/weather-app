@@ -1,5 +1,5 @@
 {
-  "name": "weather-app",
+  "name": "neionri-weather",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,13 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-three/drei": "^10.7.7",
-    "@react-three/fiber": "^9.5.0",
-    "axios": "^1.13.2",
     "framer-motion": "^12.27.5",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "three": "^0.182.0"
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

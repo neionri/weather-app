@@ -22,23 +22,21 @@ function App() {
     setLoading(true);
     try {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
-      console.log('Fetching weather from:', url);
       
       const response = await fetch(url);
       
-      console.log('Response status:', response.status);
-      
       if (!response.ok) {
         const errorData = await response.json();
-        console.error('API Error:', errorData);
         throw new Error(errorData.message || 'City not found');
       }
       
       const data = await response.json();
-      console.log('Weather data:', data);
+      
+      const currentTime = Math.floor(Date.now() / 1000);
+      const isNight = currentTime < data.sys.sunrise || currentTime > data.sys.sunset;
       
       setWeatherData(data);
-      setWeatherType(data.weather[0].main.toLowerCase());
+      setWeatherType(isNight ? 'night' : data.weather[0].main.toLowerCase());
       setLoading(false);
       
     } catch (error) {
@@ -69,7 +67,7 @@ function App() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="app-title gradient-text">
-            ☁️ Premium Weather
+            Neionri Weather App
           </h1>
         </motion.div>
 

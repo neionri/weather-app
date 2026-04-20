@@ -31,6 +31,17 @@
   background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
 }
 
+.app.night .background-gradient {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.app.mist .background-gradient,
+.app.smoke .background-gradient,
+.app.haze .background-gradient,
+.app.fog .background-gradient {
+  background: linear-gradient(135deg, #708090 0%, #2f4f4f 100%);
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;

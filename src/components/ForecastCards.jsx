@@ -31,7 +31,7 @@ const ForecastCards = ({ city }) => {
       const data = await response.json();
       
       // Get one forecast per day (every 8th item = 24 hours)
-      const dailyForecasts = data.list.filter((item, index) => index % 8 === 0).slice(0, 7);
+      const dailyForecasts = data.list.filter((item, index) => index % 8 === 0).slice(0, 5);
       
       const formatted = dailyForecasts.map(item => {
         const date = new Date(item.dt * 1000);
@@ -57,7 +57,7 @@ const ForecastCards = ({ city }) => {
 
   return (
     <div className="forecast-section">
-      <h3 className="forecast-title">7-Day Forecast</h3>
+      <h3 className="forecast-title">5-Day Forecast</h3>
       <div className="forecast-grid">
         {forecastData.map((day, index) => (
           <motion.div

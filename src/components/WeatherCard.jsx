@@ -86,7 +86,7 @@ const WeatherCard = ({ data }) => {
           <span className="detail-icon">💨</span>
           <div className="detail-info">
             <p className="detail-label">Wind Speed</p>
-            <p className="detail-value">{wind.speed} km/h</p>
+            <p className="detail-value">{(wind.speed * 3.6).toFixed(1)} km/h</p>
           </div>
         </motion.div>
 

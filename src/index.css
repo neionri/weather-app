@@ -64,8 +64,8 @@ body {
   border-radius: 16px;
 }
 
-/* Smooth Transitions */
-* {
+/* targeted transitions for performance */
+button, input, .glass, .glass-light, .forecast-card {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

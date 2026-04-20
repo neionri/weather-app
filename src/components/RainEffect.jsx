@@ -50,6 +50,7 @@ const RainEffect = () => {
     }
 
     // Animation loop
+    let animationId;
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
@@ -58,7 +59,7 @@ const RainEffect = () => {
         drop.draw();
       });
 
-      requestAnimationFrame(animate);
+      animationId = requestAnimationFrame(animate);
     }
 
     animate();
@@ -72,6 +73,7 @@ const RainEffect = () => {
     window.addEventListener('resize', handleResize);
 
     return () => {
+      cancelAnimationFrame(animationId); // ✅ Fix: cancel loop saat unmount
       window.removeEventListener('resize', handleResize);
     };
   }, []);
